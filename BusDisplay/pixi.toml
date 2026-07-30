@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Sylvain LAFRASSE <sly74fr@users.noreply.github.com>"]
+channels = ["conda-forge"]
+name = "SerialLogScroll"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pyserial = ">=3.5,<4"
+selenium = ">=4.45.0,<5"
