@@ -1,4 +1,4 @@
-## myStackChan SerialLogScroll
+## myStackChan SerialScrollLog Demo
 Displays one row at a time what’s incoming on the serial port.
 
 - A Python script running on my Mac sends the whole ‘Declaration des Droits de l’Homme’ one row at a time over USB using serial communication.

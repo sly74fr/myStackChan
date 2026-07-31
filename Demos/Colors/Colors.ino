@@ -2,55 +2,55 @@
 #include <M5Unified.h>
 
 ////////////////////////////////////////////////////////////////////////
-typedef struct { 
+typedef struct {
   char* name;
   int value;
 } Dictionary;
 
-const Dictionary COLORS[] {
+const Dictionary COLORS[]{
   // RED
-    {"POWDERBLUE", 0xB0E0},
-    {"DARKGOLDENROD", 0xB886},
-    {"RED", 0xF800},
+  { "POWDERBLUE", 0xB0E0 },
+  { "DARKGOLDENROD", 0xB886 },
+  { "RED", 0xF800 },
   // ORANGE
-    {"LIGHTCORAL", 0xF080},
-    {"SALMON", 0xFA80},
-    {"SANDYBROWN", 0xF4A4},
+  { "LIGHTCORAL", 0xF080 },
+  { "SALMON", 0xFA80 },
+  { "SANDYBROWN", 0xF4A4 },
   // YELLOW
-    {"GOLD", 0xFEA0},
-    {"YELLOW", 0xFFE0},
-    {"LEMONCHIFFON", 0xFFAC},
-    {"SEASHELL", 0xFFF5},
-    {"GREENYELLOW", 0xB7E0},
+  { "GOLD", 0xFEA0 },
+  { "YELLOW", 0xFFE0 },
+  { "LEMONCHIFFON", 0xFFAC },
+  { "SEASHELL", 0xFFF5 },
+  { "GREENYELLOW", 0xB7E0 },
   // GREEN
-    {"LIGHTSLATEGRAY", 0x7788},
-    {"GREEN", 0x07E0},
-    {"SPRINGGREEN", 0x4682},
-    {"SEAGREEN", 0x2E8B},
-    {"MEDIUMAQUAMARINE", 0x66CD},
-    {"DARKSLATEGRAY", 0x2F4F},
+  { "LIGHTSLATEGRAY", 0x7788 },
+  { "GREEN", 0x07E0 },
+  { "SPRINGGREEN", 0x4682 },
+  { "SEAGREEN", 0x2E8B },
+  { "MEDIUMAQUAMARINE", 0x66CD },
+  { "DARKSLATEGRAY", 0x2F4F },
   // BLUE
-    {"AQUAMARINE", 0x7FFA},
-    {"DARKCYAN", 0x03EF},
-    {"BLUE", 0x001F},
-    {"DEEPSKYBLUE", 0x00BF},
-    {"STEELBLUE", 0x00FF},
-    {"MIDNIGHTBLUE", 0x1919},
-    {"LIGHTSEAGREEN", 0x20B2},
-    {"SLATEBLUE", 0x6A5A},
+  { "AQUAMARINE", 0x7FFA },
+  { "DARKCYAN", 0x03EF },
+  { "BLUE", 0x001F },
+  { "DEEPSKYBLUE", 0x00BF },
+  { "STEELBLUE", 0x00FF },
+  { "MIDNIGHTBLUE", 0x1919 },
+  { "LIGHTSEAGREEN", 0x20B2 },
+  { "SLATEBLUE", 0x6A5A },
   // VIOLET
-    {"VIOLET", 0x915C},
-    {"LAWNGREEN", 0x7CFC},
-    {"MAGENTA", 0xF81F},
-    {"LIGHTCYAN", 0xE0FF},
-    {"THISTLE", 0xD8BF},
-    {"SIENNA", 0xA052},
+  { "VIOLET", 0x915C },
+  { "LAWNGREEN", 0x7CFC },
+  { "MAGENTA", 0xF81F },
+  { "LIGHTCYAN", 0xE0FF },
+  { "THISTLE", 0xD8BF },
+  { "SIENNA", 0xA052 },
   // SHADES
-    {"WHITE", 0xFFFF},
-    {"SNOW", 0xFFFA},
-    {"BURLYWOOD", 0xDEB8},
-    {"GREY", 0x8410},
-    {"DARKGREY", 0x7BEF}
+  { "WHITE", 0xFFFF },
+  { "SNOW", 0xFFFA },
+  { "BURLYWOOD", 0xDEB8 },
+  { "GREY", 0x8410 },
+  { "DARKGREY", 0x7BEF }
 };
 const int COLORS_SIZE = sizeof(COLORS) / sizeof(Dictionary);
 
@@ -59,8 +59,7 @@ const int MAX_ROWS = 8;
 int nbOfRows = 1;
 int colorIndex = 0;
 
-void DrawColors()
-{
+void DrawColors() {
   static int x = 0;
   static int y = 0;
   const int margin = 3;
@@ -112,15 +111,13 @@ void DrawColors()
   }
 }
 
-void Show(char* str)
-{
-    M5.Display.print(str);
-    Serial.print(str);
+void Show(char* str) {
+  M5.Display.print(str);
+  Serial.print(str);
 }
 
 ////////////////////////////////////////////////////////////////////////
-void setup(void)
-{
+void setup(void) {
   M5.begin();
   int textSize = M5.Display.height() / 100;
   if (textSize == 0) { textSize = 1; }
@@ -129,7 +126,8 @@ void setup(void)
   Serial.println("Booted.");
 
   Show("==========================\n");
-  Show("Sketch: '"__FILE__"'.\n\n");
+  Show("Sketch: '"__FILE__
+       "'.\n\n");
 
   Show("Screen:\n");
   Show("\t* height = ");
@@ -146,8 +144,10 @@ void setup(void)
   Show("\n\n");
 
   Show("Build:\n");
-  Show("\t* "__DATE__"\n");
-  Show("\t* "__TIME__"\n");
+  Show("\t* "__DATE__
+       "\n");
+  Show("\t* "__TIME__
+       "\n");
   Show("\n");
 
   Show("Colors:");
@@ -160,7 +160,6 @@ void setup(void)
   M5.Display.clearDisplay();
 }
 
-void loop(void)
-{
+void loop(void) {
   DrawColors();
 }
